@@ -392,6 +392,8 @@ ip route  # Show routing table
 
 
 
+
+
 1. grep – The Pattern Finder
 When to Use:
 
@@ -415,6 +417,14 @@ bash
 grep -i "error" /var/log/syslog   # Find all "error" lines (ignore case)
 
 
+
+
+
+
+
+
+
+
 2. sed – The Text Replacer
 When to Use:
 
@@ -436,6 +446,20 @@ Example:
 
 bash
 sed 's/old_ip/new_ip/g' config.txt  # Replace all "old_ip" with "new_ip"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 3. awk – The Data Extractor
@@ -464,6 +488,25 @@ awk '{print $1, $3}' access.log   # Print 1st and 3rd columns (e.g., IP + status
 Here's a **structured cheat sheet** for `awk`, `sed`, and `grep` with syntax and examples:
 
 ---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # **Linux Text Processing Cheat Sheet**  
 *(awk, sed, grep)*  
