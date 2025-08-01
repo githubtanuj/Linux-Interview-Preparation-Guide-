@@ -1,3 +1,121 @@
+### ✅ ** List of Commands Covered:**
+
+| Category                   | Commands Covered                                                                  |
+| -------------------------- | --------------------------------------------------------------------------------- |
+| File Navigation / Creation | `ls`, `pwd`, `cd`, `mkdir`, `touch`, `clear`                                      |
+| File/Folder Management     | `rm`, `rm -r`, `rmdir`, `cp`, `cp -r`, `mv`                                       |
+| Viewing/Editing Content    | `cat`, `echo ... > file`, `head`, `tail`, `tail -f`, `less`, `more`, `cut`, `tee` |
+| Links                      | `ln source link`, `ln -s source linkname`                                         |
+| Sorting and Diff           | `sort`, `diff`                                                                    |
+| Word & Byte Count          | `wc`                                                                              |
+| Monitoring & Logs          | `ps`, `top`, `free -h`, `vmstat`, `df -h`, `du`, `nohup`, `head/tail nohup.out`   |
+
+## 🧩 Linux Commands & Concepts (Complete Overview)
+
+### **1. Terminal & Shell Basics**
+
+* **Terminal**: Text-based interface to enter commands.
+* **Shell**: Interpreter that executes your commands.
+
+---
+
+### **2. Directory Navigation & File Basics**
+
+* `pwd`: Print working directory (your current directory).
+* `cd directory`: Change directory.
+
+  * `cd ..` moves up one level.
+* `ls`: List files & directories.
+
+  * `ls -a`: Shows hidden (dot‑) files.
+  * `ls -l`: Detailed listing including permissions, owner, etc.
+* `mkdir foldername`: Create a new directory.
+* `touch filename`: Create an empty file.
+* `clear`: Clear the terminal screen.
+
+---
+
+### **3. File & Folder Management**
+
+* `cp source dest`: Copy files or directories.
+
+  * `cp -r source_folder dest_folder`: Recursively copy a folder.
+* `mv source dest`: Move or rename a file or directory.
+* `rm filename`: Permanently delete a file.
+* `rm -r foldername`: Remove a folder and all its contents.
+* `rmdir foldername`: Remove an empty folder.
+
+---
+
+### **4. Viewing File Content**
+
+* `cat filename`: Display whole file content.
+* `echo "text"`: Print text to terminal.
+* `echo "text" > file.txt`: Write text to a file.
+* `head filename`: View top lines.
+* `tail filename`: View bottom lines.
+
+  * `tail -f filename`: Live-monitor a file (e.g., logs as they update).
+* `less filename` / `more filename`: View files page-by-page.
+
+---
+
+### **5. File Analysis & Comparison**
+
+* `wc filename`: Shows lines, words, and byte count.
+
+  * Can be used with multiple files to compare counts.
+* `cut -b start-end filename`: Extract specified byte range.
+* `tee`: `command | tee file.txt` – outputs to terminal **and** writes to file.
+* `sort`: Sort file lines alphabetically.
+* `diff file1 file2`: Compare two files to show differences.
+
+---
+
+### **6. Links: Hard vs. Soft**
+
+* **Soft/symbolic link**: `ln -s source linkname`
+
+  * If the source file is deleted, the link breaks.
+* **Hard link**: `ln source linkname`
+
+  * Remains valid even if original is removed — both point to the same data.
+
+---
+
+### **7. System Metrics & Monitoring**
+
+* `ps`: Shows processes running in the current shell session.
+* `top`: Interactive real-time view of system resources and processes.
+* `free -h`: Displays RAM usage in a human-readable format.
+* `vmstat`: Virtual memory stats—active/inactive, swap, I/O.
+* `df -h`: Disk usage overview of all mounted filesystems.
+* `du .`: Disk usage by directory/file under the current folder.
+
+  * `du -h folder/filename` for readability.
+
+---
+
+### **8. Background Tasks & Logs**
+
+* `nohup command > output.log 2>&1 &`: Run a command immune to hangups, saving both output and errors.
+* You can then inspect logs using:
+
+  * `head -n 5 nohup.out`
+  * `tail -n 5 nohup.out`
+* Combine with `head`, `tail`, `wc`, etc., to analyze logs.
+
+---
+
+### ✅ Summary: Commands covered
+
+```text
+ls, pwd, cd, mkdir, touch, clear, cp, mv, rm, rmdir,
+cat, echo, head, tail(-f), less, more, cut, tee, sort, diff, wc,
+ln (hard and soft), ps, top, free, vmstat, df, du, nohup
+```
+
+---
 NETWORKING LINUX
 
 
