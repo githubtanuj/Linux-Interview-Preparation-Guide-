@@ -640,3 +640,108 @@ grep	Find lines matching a word	Fastest search tool	Matching lines
 sed	Replace/delete text	Edit files without manual work	Modified text
 awk	Extract columns or do math	Handles structured data perfectly	Selected data/calculations
 
+
+
+---
+# **🚀 Linux *AWS EBS Volumes & LVM Management Guide** 
+# * 
+*A practical tutorial on attaching, mounting, and resizing storage in AWS EC2*  
+
+---
+
+## **1. Core Concepts**  
+- **EBS Volume**: Virtual hard disk for AWS EC2 (like `C:`/`D:` drives).  
+- **LVM (Logical Volume Manager)**:  
+  - **PV (Physical Volume)**: Raw disk (`/dev/xvdf`).  
+  - **VG (Volume Group)**: Pool of PVs (e.g., `22GB = 10GB + 12GB`).  
+  - **LV (Logical Volume)**: Flexible partition from a VG (e.g., `10GB`).  
+
+---
+
+## **2. Steps Summary**  
+
+### **Step 1: Create & Attach EBS Volumes**  
+1. **Create 3 Volumes** in AWS Console:  
+   - `10GB`, `12GB`, `14GB` (same AZ as EC2).  
+2. **Attach to EC2**:  
+   - Device names: `/dev/sdf`, `/dev/sdg`, `/dev/sdh`.  
+
+### **Step 2: Initialize Volumes**  
+```bash
+lsblk                  # List attached disks  
+sudo su                # Switch to root  
+```
+
+### **Step 3: LVM Setup**  
+1. **Create Physical Volumes (PVs)**:  
+   ```bash
+   pvcreate /dev/xvdf /dev/xvdg  
+   ```  
+2. **Create Volume Group (VG)**:  
+   ```bash
+   vgcreate TWA_vg /dev/xvdf /dev/xvdg  
+   ```  
+3. **Create Logical Volume (LV)**:  
+   ```bash
+   lvcreate -L 10G -n TWA_lv TWA_vg  
+   ```  
+
+### **Step 4: Mount the LV**  
+1. **Format & Mount**:  
+   ```bash
+   mkfs.ext4 /dev/TWA_vg/TWA_lv  
+   mkdir /mnt/TWA_lv_mount  
+   mount /dev/TWA_vg/TWA_lv /mnt/TWA_lv_mount  
+   ```  
+2. **Verify**:  
+   ```bash
+   df -h  # Check mounted storage  
+   ```  
+
+### **Step 5: Direct Mount (Non-LVM)**  
+For `/dev/xvdh` (14GB volume):  
+```bash
+mkfs.xfs /dev/xvdh  
+mkdir /mnt/TWA_disk_mount  
+mount /dev/xvdh /mnt/TWA_disk_mount  
+```
+
+### **Step 6: Extend an LV**  
+Add `5GB` to `TWA_lv`:  
+```bash
+lvextend -L +5G /dev/TWA_vg/TWA_lv  
+resize2fs /dev/TWA_vg/TWA_lv  # Resize filesystem  
+df -h  # Confirm new size  
+```
+
+---
+
+## **3. Key Commands Cheatsheet**  
+| Command | Description |  
+|---------|-------------|  
+| `lsblk` | List block devices |  
+| `pvcreate` | Initialize PV |  
+| `vgcreate` | Create VG |  
+| `lvcreate` | Create LV |  
+| `mount` | Mount a filesystem |  
+| `lvextend` | Resize LV |  
+
+---
+
+## **4. Pro Tips**  
+✅ **Always**:  
+- Use `/dev/sdf`+ for non-root volumes.  
+- Match AZ for EBS-EC2 attachment.  
+- Use `df -h` and `lsblk` for debugging.  
+
+⚠️ **Avoid**:  
+- Using `/dev/sda`/`/dev/sdb` (reserved for root).  
+
+---
+
+## **5. Why This Matters**  
+- **Scalability**: Dynamically resize storage without downtime.  
+- **Cost-Efficiency**: Pay only for what you use.  
+- **Flexibility**: Combine disks seamlessly with LVM.  
+
+--- 
