@@ -113,8 +113,19 @@
 
 
 # **🚀 Linux User management and Permission Part -2 Cheat Sheet - Part 1 (DevOps Edition)*
-### **Linux Basics Summary with Examples**  
+### **Linux Basics Summary with Examples** 
 
+Simply think of Read (4) + Write (2) + Execute (1) = 7.
+
+777 means Read + Write + Execute permissions for the Owner, Group, and Others.
+The first digit represents the Owner,
+The second digit represents the Group,
+The third digit represents Others.
+
+412 means Read permission for the Owner, Execute permission for the Group, and Write permission for Others.
+again the first digit represents the Owner,
+The second digit represents the Group,
+The third digit represents Others.
 #### **1. Basic Commands**  
 - **`date`**: Check current date/time.  
   ```bash
@@ -224,6 +235,11 @@
 - Remote access: `ssh` for login, `scp` for file transfer.  
 
 Practice these commands to master Linux basics! 🐧
+
+
+
+
+
 NETWORKING LINUX
 
 
