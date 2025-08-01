@@ -1,4 +1,7 @@
+# **🚀 Linux basic Cheat Sheet - Part 1 (DevOps Edition)*
+
 ### ✅ ** List of Commands Covered:**
+
 
 | Category                   | Commands Covered                                                                  |
 | -------------------------- | --------------------------------------------------------------------------------- |
@@ -107,15 +110,120 @@
 
 ---
 
-### ✅ Summary: Commands covered
 
-```text
-ls, pwd, cd, mkdir, touch, clear, cp, mv, rm, rmdir,
-cat, echo, head, tail(-f), less, more, cut, tee, sort, diff, wc,
-ln (hard and soft), ps, top, free, vmstat, df, du, nohup
-```
 
----
+# **🚀 Linux User management and Permission Part -2 Cheat Sheet - Part 1 (DevOps Edition)*
+### **Linux Basics Summary with Examples**  
+
+#### **1. Basic Commands**  
+- **`date`**: Check current date/time.  
+  ```bash
+  date  # Output: Fri Dec 15 09:00:00 UTC 2023
+  ```  
+- **`ls`**: List files/directories.  
+  ```bash
+  ls -l  # Detailed list (shows permissions)
+  ```  
+- **`mkdir`**: Create a directory.  
+  ```bash
+  mkdir deps  # Creates 'deps' folder
+  ```  
+- **`touch`**: Create an empty file.  
+  ```bash
+  touch demo.txt  # Creates 'demo.txt'
+  ```  
+- **`cd`**: Navigate directories.  
+  ```bash
+  cd deps      # Enter 'deps' folder
+  cd ..        # Move up one level
+  ```  
+
+#### **2. File Operations**  
+- **`echo`**: Print text or write to a file.  
+  ```bash
+  echo "Hello" > hello.txt  # Writes "Hello" to hello.txt
+  ```  
+- **`cat`**: View file content.  
+  ```bash
+  cat demo.txt  # Displays content of demo.txt
+  ```  
+- **`cp` / `mv`**: Copy or move files.  
+  ```bash
+  cp file.txt /backup/      # Copies file.txt to /backup/
+  mv old.txt new.txt        # Renames old.txt to new.txt
+  ```  
+- **`rm`**: Delete files/folders.  
+  ```bash
+  rm file.txt          # Deletes file.txt
+  rm -r folder/        # Deletes folder recursively
+  ```  
+
+#### **3. Permissions & Ownership**  
+- **`chmod`**: Change permissions.  
+  ```bash
+  chmod 755 script.sh  # Sets rwxr-xr-x (User: rwx, Group/Others: r-x)
+  ```  
+- **`chown`**: Change owner.  
+  ```bash
+  sudo chown user:group file.txt  # Changes owner to 'user' and group to 'group'
+  ```  
+
+#### **4. User & Group Management**  
+- **Create User**:  
+  ```bash
+  sudo useradd jethalal  # Adds user 'jethalal'
+  sudo passwd jethalal   # Sets password for 'jethalal'
+  ```  
+- **Switch User**:  
+  ```bash
+  su jethalal  # Log in as 'jethalal'
+  ```  
+- **Create Group**:  
+  ```bash
+  sudo groupadd devs  # Creates 'devs' group
+  sudo usermod -aG devs jethalal  # Adds 'jethalal' to 'devs' group
+  ```  
+
+#### **5. Compression & Archiving**  
+- **`tar`**: Archive files.  
+  ```bash
+  tar -czvf backup.tar.gz /folder  # Compresses '/folder' into backup.tar.gz
+  tar -xzvf backup.tar.gz          # Extracts files
+  ```  
+- **`zip` / `unzip`**:  
+  ```bash
+  zip archive.zip file.txt        # Creates archive.zip
+  unzip archive.zip               # Extracts files
+  ```  
+
+#### **6. Networking**  
+- **`ssh`**: Connect to a remote server.  
+  ```bash
+  ssh -i key.pem user@host  # Connects using a private key
+  ```  
+- **`scp`**: Securely copy files.  
+  ```bash
+  scp file.txt user@host:/path/  # Copies file.txt to remote server
+  ```  
+
+#### **7. System Monitoring**  
+- **`df`**: Check disk space.  
+  ```bash
+  df -h  # Shows disk usage in human-readable format
+  ```  
+- **`top`**: Monitor processes.  
+  ```bash
+  top  # Real-time process viewer
+  ```  
+
+---  
+**Key Takeaways**:  
+- Use `sudo` for admin tasks (e.g., `sudo apt install package`).  
+- Permissions: `chmod 755` (rwxr-xr-x) for scripts, `644` (rw-r--r--) for files.  
+- Archive files with `tar` or `zip`.  
+- Remote access: `ssh` for login, `scp` for file transfer.  
+
+Practice these commands to master Linux basics! 🐧
 NETWORKING LINUX
 
 
