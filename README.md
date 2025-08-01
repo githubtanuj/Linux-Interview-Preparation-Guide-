@@ -388,11 +388,186 @@ ip route  # Show routing table
 | "What’s my IP?"          | `ip a`               |
 
 ---
+# **🚀 Linux Advance command Cheat Sheet (awk, sed, grep – Easy to Remember!)**
 
-This version is:  
-✅ **Shorter** (no fluff)  
-✅ **Easier to scan** (bullet points, tables)  
-✅ **Actionable** (clear use cases + examples)  
-✅ **Visual** (emoji + formatting for quick reading)  
 
-Let me know if you'd like any tweaks! 🚀
+
+1. grep – The Pattern Finder
+When to Use:
+
+Need to find lines containing a word/pattern (e.g., errors in logs).
+
+Quickly filter output (e.g., ps aux | grep nginx).
+
+Why to Use:
+
+Fastest way to search entire files or command output.
+
+Supports case-insensitive (-i), count matches (-c), and more.
+
+What It Shows:
+
+All lines matching the pattern.
+
+Example:
+
+bash
+grep -i "error" /var/log/syslog   # Find all "error" lines (ignore case)
+
+
+2. sed – The Text Replacer
+When to Use:
+
+Replace text in files (e.g., change IPs in configs).
+
+Delete lines (e.g., remove debug logs).
+
+Why to Use:
+
+Edit files without opening them (great for automation).
+
+Handle bulk replacements in seconds.
+
+What It Shows:
+
+Modified text (use -i to save changes to the file).
+
+Example:
+
+bash
+sed 's/old_ip/new_ip/g' config.txt  # Replace all "old_ip" with "new_ip"
+
+
+3. awk – The Data Extractor
+When to Use:
+
+Extract specific columns (e.g., timestamps from logs).
+
+Do calculations (e.g., sum values in a CSV).
+
+Why to Use:
+
+Works like a mini programming language for text.
+
+Perfect for structured data (logs, CSVs).
+
+What It Shows:
+
+Filtered columns, calculated results, or reformatted data.
+
+Example:
+
+bash
+awk '{print $1, $3}' access.log   # Print 1st and 3rd columns (e.g., IP + status code)
+
+
+Here's a **structured cheat sheet** for `awk`, `sed`, and `grep` with syntax and examples:
+
+---
+
+# **Linux Text Processing Cheat Sheet**  
+*(awk, sed, grep)*  
+
+---
+
+## **1. `awk` – Column-Based Text Processing**  
+**Syntax:**  
+```bash
+awk 'pattern {action}' file
+```
+
+### **Key Features & Examples**  
+| Task                  | Command Example                          | Explanation                     |
+|-----------------------|------------------------------------------|---------------------------------|
+| Print columns         | `awk '{print $1, $3}' file.log`         | Print 1st and 3rd columns       |
+| Filter lines          | `awk '/ERROR/ {print}' file.log`        | Print lines containing "ERROR"  |
+| Count matches         | `awk '/WARN/ {count++} END {print count}' file.log` | Count "WARN" lines |
+| Field separator       | `awk -F',' '{print $2}' data.csv`       | Use `,` as delimiter (for CSV)  |
+| Math operations       | `awk '{sum+=$1} END {print sum}' nums.txt` | Sum values in 1st column    |
+
+---
+
+## **2. `sed` – Stream Editor (Find/Replace)**  
+**Syntax:**  
+```bash
+sed 's/find/replace/flags' file
+```
+
+### **Key Features & Examples**  
+| Task                  | Command Example                          | Explanation                     |
+|-----------------------|------------------------------------------|---------------------------------|
+| Replace first match   | `sed 's/old/new/' file.txt`             | Replace first "old" per line    |
+| Replace all matches   | `sed 's/old/new/g' file.txt`            | Replace **all** "old" (global)  |
+| Delete lines          | `sed '/pattern/d' file.txt`             | Delete lines with "pattern"     |
+| Edit file in-place    | `sed -i 's/old/new/g' file.txt`         | Save changes to file (`-i`)     |
+| Print line numbers    | `sed -n '/pattern/=' file.txt`          | Show line numbers of matches    |
+
+---
+
+## **3. `grep` – Pattern Search**  
+**Syntax:**  
+```bash
+grep [options] "pattern" file
+```
+
+### **Key Features & Examples**  
+| Task                  | Command Example                          | Explanation                     |
+|-----------------------|------------------------------------------|---------------------------------|
+| Basic search          | `grep "error" file.log`                 | Case-sensitive search           |
+| Case-insensitive      | `grep -i "Error" file.log`              | Ignore case (`-i`)              |
+| Count matches         | `grep -c "WARN" file.log`               | Count occurrences (`-c`)        |
+| Search recursively    | `grep -r "config" /etc/`                | Search in directories (`-r`)    |
+| Inverse match         | `grep -v "success" file.log`            | Exclude lines with "success"    |
+| Show line numbers     | `grep -n "fail" file.log`               | Print line numbers (`-n`)       |
+
+---
+
+## **Combined Workflow Examples**  
+1. **Extract IPs from logs, count unique:**  
+   ```bash
+   awk '{print $1}' access.log | sort | uniq -c
+   ```
+
+2. **Replace "localhost" with "127.0.0.1" in config:**  
+   ```bash
+   sed -i 's/localhost/127.0.0.1/g' /etc/nginx.conf
+   ```
+
+3. **Find all Java processes using high CPU:**  
+   ```bash
+   ps aux | grep java | awk '$3 > 80 {print $2}'
+   ```
+
+---
+
+## **Quick Reference Table**  
+| Command | Best For                     | Structure                    |  
+|---------|------------------------------|------------------------------|  
+| `awk`   | Column extraction, math      | `awk 'pattern {action}' file`|  
+| `sed`   | Find/replace, line edits     | `sed 's/find/replace/g' file`|  
+| `grep`  | Fast pattern matching        | `grep [options] "pattern" file` |  
+
+---
+
+### **When to Use Which?**  
+- **`grep`**: Quick searches (e.g., "Find all errors in logs").  
+- **`sed`**: Bulk edits (e.g., "Replace all old IPs with new ones").  
+- **`awk`**: Data extraction (e.g., "Sum values in column 2 of a CSV").  
+
+---
+
+**Pro Tip:** Pipe commands together! Example:  
+```bash
+grep "ERROR" app.log | awk '{print $5}' | sort | uniq -c
+```  
+→ *Count unique error codes in logs.*  
+
+Save this cheat sheet for quick reference! 🚀
+
+
+Quick Comparison
+Command	When to Use	Why to Use	What It Shows
+grep	Find lines matching a word	Fastest search tool	Matching lines
+sed	Replace/delete text	Edit files without manual work	Modified text
+awk	Extract columns or do math	Handles structured data perfectly	Selected data/calculations
+
