@@ -744,4 +744,201 @@ df -h  # Confirm new size
 - **Cost-Efficiency**: Pay only for what you use.  
 - **Flexibility**: Combine disks seamlessly with LVM.  
 
---- 
+---
+# **🚀 Linux Troubleshooting )*
+Here are your **Linux Troubleshooting Flashcards** in text format, ideal for direct practice:
+
+---
+
+### 🔹 Flashcard 1
+
+**❓ Problem:** System Not Booting
+**🔧 What tool would you use and how would you fix it?**
+**🛠️ Answer:**
+
+* **Tool(s):** GRUB, fsck
+* **Root Cause:** Corrupt bootloader or file system
+* **Fix:** Repair GRUB, run fsck
+* **Analogy:** GRUB = Broken GPS
+
+---
+
+### 🔹 Flashcard 2
+
+**❓ Problem:** Network Connectivity Issues
+**🔧 What tool would you use and how would you fix it?**
+**🛠️ Answer:**
+
+* **Tool(s):** ping, traceroute, netstat
+* **Root Cause:** IP/DNS misconfig, firewall blocks
+* **Fix:** Fix IP, DNS, open ports
+* **Analogy:** Network = Road, ping = traffic tester
+
+---
+
+### 🔹 Flashcard 3
+
+**❓ Problem:** High CPU Usage
+**🔧 What tool would you use and how would you fix it?**
+**🛠️ Answer:**
+
+* **Tool(s):** top, htop, strace
+* **Root Cause:** Runaway process or loop
+* **Fix:** Kill/optimize process
+* **Analogy:** CPU = Runaway train
+
+---
+
+### 🔹 Flashcard 4
+
+**❓ Problem:** Excessive Disk I/O
+**🔧 What tool would you use and how would you fix it?**
+**🛠️ Answer:**
+
+* **Tool(s):** iostat, iotop
+* **Root Cause:** Heavy disk process (e.g., DB)
+* **Fix:** Optimize queries, index DB
+* **Analogy:** Disk = Traffic jam
+
+---
+
+### 🔹 Flashcard 5
+
+**❓ Problem:** Unresponsive Server
+**🔧 What tool would you use and how would you fix it?**
+**🛠️ Answer:**
+
+* **Tool(s):** logs, top, kill
+* **Root Cause:** Resource exhaustion or crash
+* **Fix:** Kill heavy process or reboot
+* **Analogy:** Server = Frozen computer
+
+---
+
+### 🔹 Flashcard 6
+
+**❓ Problem:** Security Breach
+**🔧 What tool would you use and how would you fix it?**
+**🛠️ Answer:**
+
+* **Tool(s):** audit.log, who, netstat
+* **Root Cause:** Unauthorized access or malware
+* **Fix:** Isolate system, audit logs
+* **Analogy:** Security = Open door alert
+
+---
+
+### 🔹 Flashcard 7
+
+**❓ Problem:** SSH Login Failures
+**🔧 What tool would you use and how would you fix it?**
+**🛠️ Answer:**
+
+* **Tool(s):** sshd logs, ufw, /etc/ssh
+* **Root Cause:** Firewall, config, or key issues
+* **Fix:** Open port, fix config
+* **Analogy:** SSH = Locked door
+
+---
+
+### 🔹 Flashcard 8
+
+**❓ Problem:** Package Dependency Issues
+**🔧 What tool would you use and how would you fix it?**
+**🛠️ Answer:**
+
+* **Tool(s):** apt/yum logs
+* **Root Cause:** Broken or missing dependencies
+* **Fix:** Update repos, apt-get -f install
+* **Analogy:** Packages = Puzzle pieces
+
+---
+
+### 🔹 Flashcard 9
+
+**❓ Problem:** Kernel Update Problems
+**🔧 What tool would you use and how would you fix it?**
+**🛠️ Answer:**
+
+* **Tool(s):** dmesg, journalctl
+* **Root Cause:** Incompatible or buggy kernel
+* **Fix:** Rollback kernel
+* **Analogy:** Kernel = Engine upgrade failure
+
+---
+
+### 🔹 Flashcard 10
+
+**❓ Problem:** Corrupted File System
+**🔧 What tool would you use and how would you fix it?**
+**🛠️ Answer:**
+
+* **Tool(s):** fsck, mount
+* **Root Cause:** Disk errors, improper shutdown
+* **Fix:** fsck repair, remount
+* **Analogy:** FS = Cracked foundation
+
+---
+
+### 🔹 Flashcard 11
+
+**❓ Problem:** Disk Space Issues
+**🔧 What tool would you use and how would you fix it?**
+**🛠️ Answer:**
+
+* **Tool(s):** df, du
+* **Root Cause:** Logs or large files filled disk
+* **Fix:** Clean files, expand disk
+* **Analogy:** Disk = Overfilled bucket
+
+---
+
+### 🔹 Flashcard 12
+
+**❓ Problem:** High Memory Usage
+**🔧 What tool would you use and how would you fix it?**
+**🛠️ Answer:**
+
+* **Tool(s):** top, free -h
+* **Root Cause:** Memory leak or large app
+* **Fix:** Restart/limit process
+* **Analogy:** RAM = Overflowing bottle
+
+---
+
+### 🔹 Flashcard 13
+
+**❓ Problem:** Unresponsive Web Service
+**🔧 What tool would you use and how would you fix it?**
+**🛠️ Answer:**
+
+* **Tool(s):** curl, journalctl, systemctl
+* **Root Cause:** Port conflict, bad config
+* **Fix:** Restart/fix config
+* **Analogy:** Service = Broken speaker
+
+---
+
+### 🔹 Flashcard 14
+
+**❓ Problem:** User Login Problems
+**🔧 What tool would you use and how would you fix it?**
+**🛠️ Answer:**
+
+* **Tool(s):** passwd, /etc/shadow
+* **Root Cause:** Wrong password or locked account
+* **Fix:** Reset password, unlock
+* **Analogy:** Login = ID card denied
+
+---
+
+### 🔹 Flashcard 15
+
+**❓ Problem:** Permission Issues
+**🔧 What tool would you use and how would you fix it?**
+**🛠️ Answer:**
+
+* **Tool(s):** ls -l, chmod, chown
+* **Root Cause:** Wrong file perms or ownership
+* **Fix:** Fix perms with chmod/chown
+* **Analogy:** Permission = Door lock mismatch
