@@ -942,3 +942,109 @@ Here are your **Linux Troubleshooting Flashcards** in text format, ideal for dir
 * **Root Cause:** Wrong file perms or ownership
 * **Fix:** Fix perms with chmod/chown
 * **Analogy:** Permission = Door lock mismatch
+
+
+
+# Linux Interview Q&A
+
+## Basics
+- What is Linux? → Open-source OS kernel
+- Features → Free, Secure, Multi-user, GUI/CLI
+- Distros → Ubuntu, Debian, CentOS, RHEL
+- Linux vs Windows → Open-source vs Paid
+- Components → Kernel, Shell, GUI, Utilities
+- Permissions → Read, Write, Execute
+- Kernel → Core of OS, manages resources
+- LILO → Bootloader
+- Shells → bash, zsh, ksh, csh
+- Root Account → Superuser
+- CLI vs GUI → Commands vs Icons
+- Swap Space → Disk used as RAM
+- Links → Hard vs Soft
+- Streams → stdin, stdout, stderr
+
+## File & Process Management
+- mount/umount → attach/detach FS
+- Network troubleshoot → ping, ifconfig/ip, firewall
+- List processes → ps, top, htop
+- chmod → change file permissions
+- Disk usage → df, du, ncdu
+- Find PID → pgrep, ps -e | grep
+- rsync → sync files
+- User mgmt → useradd, passwd
+- Format disk → mkfs.ext4, mkfs.xfs
+- Change password → passwd user
+- Process vs Thread → heavy vs lightweight
+- ulimit → resource limits
+- find → search files
+- RAID → 0,1,5,6,10
+- Challenges → hardware, learning curve
+- Zombie Process → finished but not cleaned
+- Orphan Process → parent died
+- fork vs exec → duplicate vs replace process
+
+## Memory & Storage
+- /proc → process + kernel info
+- Virtual Memory → disk as RAM
+- Scheduling → priority-based
+- strace → trace syscalls
+- Performance tuning → update, monitor, tune kernel
+- df vs du → filesystem vs directory usage
+- Memory check → free, vmstat
+- CPU check → top, uptime
+- iostat → disk/CPU I/O
+- Swap vs Cache → RAM backup vs fast access data
+
+## Networking
+- iptables → firewall rules
+- SMTP → email transfer protocol
+- Check open ports → netstat, ss
+- ping vs traceroute → reachability vs path
+- Interface details → ifconfig, ip addr
+- nslookup vs dig → simple vs detailed DNS
+- iptables vs firewalld → old vs new
+
+## Users & Security
+- Admin tasks → user mgmt, backup, monitoring
+- Secure server → patches, firewall, IDS
+- sudo → run as root
+- umask → default permissions
+- Find & Kill → ps, kill
+- su vs sudo → switch vs temporary root
+- /etc/sudoers → sudo config
+- SELinux vs AppArmor → policy vs profile
+- passwd → change password
+- Lock/unlock user → passwd -l / -u
+
+## Booting & System
+- Boot failure → logs, grub, kernel
+- init → first process (PID 1)
+- GRUB → bootloader
+- Runlevels → 0-halt,1-single,3-multi,5-GUI,6-reboot
+- systemd vs init → modern vs old
+- Reboot system → reboot, shutdown -r now
+- System logs → /var/log/
+
+## Scripting & Automation
+- Shell Script → commands in file
+- Make script executable → chmod +x
+- .sh vs .bash → portable vs bash features
+- Debug script → bash -x script.sh
+- Shebang → interpreter
+- sed → stream editor
+- Schedule tasks → cron
+
+## Package Management
+- Package managers → apt, yum, dnf
+- rpm → manage .rpm packages
+- Installed pkgs → dpkg -l, rpm -qa
+- Update pkgs → apt upgrade, yum update
+- Dependencies → apt-cache depends, yum deplist
+
+## Misc
+- grep → search text
+- Check service status → systemctl status
+- /etc/passwd vs /etc/shadow → user info vs encrypted pw
+- Compress/Decompress → tar -czvf / tar -xzvf
+- Process vs Daemon → normal vs background service
+- Why Linux in servers? → secure, free, stable, high perf
