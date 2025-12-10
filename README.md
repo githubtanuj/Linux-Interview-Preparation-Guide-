@@ -205,7 +205,7 @@ Here's your beautifully formatted Linux commands cheat sheet with emojis and vis
 ---
 
 
-# **🚀 Linux User management and Permission Part -2 Cheat Sheet - Part 1 (DevOps Edition)*
+# **🚀 Linux User management and Permission Part -2 (DevOps Edition)*
 ### **Linux Basics Summary with Examples** 
 
 Simply think of Read (4) + Write (2) + Execute (1) = 7.
